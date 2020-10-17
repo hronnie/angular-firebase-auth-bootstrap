@@ -1,0 +1,21 @@
+<div>
+    <app-auth-form (submitted)="loginUserWithPasswordAndEmail($event)">
+        <h1>Login</h1>
+        <a routerLink="/register">Not registered?</a>
+        <button type="submit">
+            Login
+        </button>
+        <button (click)="loginUserWithFacebook()" type="button">
+            Log in with Facebook
+        </button>
+        <button (click)="loginUserWithGoogle()" type="button">
+            Log in with Google
+        </button>
+        <div class="forgotPassword">
+            <span routerLink="/forgot-password">Forgot Password?</span>
+        </div>
+        <div *ngIf="error" class="error">
+            {{ error }}
+        </div>
+    </app-auth-form>
+</div>
